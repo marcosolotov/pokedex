@@ -1,0 +1,20 @@
+<div class="home">
+  <h1>Pokedex</h1>
+  <div class="input">
+    <label for="pesquisa_pokemon">Digite o nome do Pokemon:</label>
+    <input type="text" [(ngModel)]="inputContent" id="pesquisa_pokemon">
+    <button (click)="getPokemon(inputContent)">Pesquisar</button>
+  </div>
+  <div class="card">
+    <div class="card__title">
+      <h3> {{ pokemon.name }} </h3>
+    </div>
+    <div class="card__body">
+      <img class="card__img" [src]="pokemon.sprites.front_default" alt="pokemon">
+    </div>
+    <div class="card__stats">
+      <span class="card__stats__type" *ngFor="let t of pokemon.types"> {{ t.type.name }} </span>
+    </div>
+  </div>
+</div>
+<!-- (input)="getPokemon($any($event.target).value) -->
